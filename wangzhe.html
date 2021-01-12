@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    .wangzhe{
+        position: relative;
+        width: 720px;
+        overflow: hidden;/*外面是隐藏的，里面项目是显现的*/
+    }
+    .img-wangzhe{
+        display: flex;  /*弹性盒子*/
+        width: 720px;  /*设置宽度，只显示盒子内部的图片*/
+        /*overflow: hidden; /*隐藏其他多余项目*/
+        transition:all linear 0.5s;
+    }
+    .nav{
+        display: flex;/*和图片一样，文字横向排列*/
+        width: 100%;
+        font-size: 25px;/*改字体大小*/
+        font-family: NSimSun;/*改字体*/
+        position: absolute;
+        bottom: 0;/*将字体放置图片最下面一行*/
+        left: 0;
+        background-color:gainsboro;/*设置背景颜色*/
+
+    }
+    .wangzheid-index{
+        width: 20%;/*因为是五张平均分*/
+        text-align: center;
+    }
+
+
+</style>
+<body>
+    <div class="wangzhe">
+        <div class="img-wangzhe">
+            <div class="item">
+                <img src="C:\Users\张昊宇\Desktop\王者图片\1fd10d7f9e04df29bccd44fa87b813b7_720w.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="C:\Users\张昊宇\Desktop\王者图片\2aa17614f2ca28d040590d2e0a34b0ed_720w.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="C:\Users\张昊宇\Desktop\王者图片\851153c165ec15b5aad4bf5bad99a06d_720w.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="C:\Users\张昊宇\Desktop\王者图片\d028f454f6e5bed0618b6a6a07a64b53_720w.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="C:\Users\张昊宇\Desktop\王者图片\bcdf42302d6d80c3aa0f5cdc72a9e47d_720w.jpg" alt="">
+            </div>
+        </div>
+        <div class="nav">
+            <div class="wangzheid-index">
+                范海辛
+            </div>
+            <div class="wangzheid-index">
+                美猴王
+            </div>
+            <div class="wangzheid-index">
+                地狱火
+            </div>
+            <div class="wangzheid-index">
+                新刘备
+            </div>
+            <div class="wangzheid-index">
+                李小白
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        var imglist = document.getElementsByClassName("img-wangzhe")[0];
+        var idlist = document.getElementsByClassName("wangzheid-index");
+
+        for (let i=1;i<=idlist.length;i++)
+        {
+            idlist[i-1].addEventListener
+            (
+                'click',
+            function()
+            {
+                imglist.style.transform ="translateX(-" + ((i-1)) * 100 + "%)" ;
+            }
+            )
+        }
+    </script>
+</body>
+</html>
